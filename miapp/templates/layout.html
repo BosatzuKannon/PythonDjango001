@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+        | Carlos Jaramillo
+    </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div id="logotipo">
+            <img src="{% static 'images/logo.png'%}" alt="logo">
+            <h1>Sitio Web con Django</h1>
+        </div>        
+    </header>
+   
+    <nav>
+        <ul>
+            <li> <a href="/inicio" > Inicio </a> </li>
+            <li> <a href="/hola-mundo" > Hola Mundo </a> </li>
+            <li> <a href="/pagina-pruebas" > Página de Pruebas</a> </li>
+            <li> <a href="/contacto" > Contacto</a> </li>
+        </ul>
+    </nav>
+
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+            
+    <div id="content">
+        <div class="box">
+            {% block content %}
+                <strong>Contenido de bloque original</strong>
+            {% endblock %}
+        </div>        
+    </div>
+
+    <footer>
+        Master en Python &copy; Carlos Jaramillo
+    </footer>
+</body>
+</html>
