@@ -7,7 +7,7 @@ def index(request):
         'title':'Página de Inicio',
         'mi_variable':'Soy un dato que esta en la vista'
     })
-
+ 
 def hola_mundo(request):
     return render(request, 'hola_mundo.html')
 
