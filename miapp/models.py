@@ -10,6 +10,6 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class Category(models.Model):
-    name = models.CharField(max_length=110)
+    name = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
     created_at = models.DateField()

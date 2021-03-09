@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-
+from miapp.models import Article
 
 
 def index(request):   
@@ -20,3 +20,42 @@ def pagina(request, redirigir=0):
 
 def contacto(request, nombre="Julio", apellido="Corrales"):
     return render(request, 'contacto.html')
+
+def crear_articulo(request):
+
+    articulo = Article(
+        title = 'Primer articulo',
+        content = 'Contenido del articulo',
+        public = True
+    )
+
+    articulo.save()
+
+    return HttpResponse(f"Articulo creado {articulo.title} {articulo.content}")
+
+def articulo(request):
+
+    articulo = Article.objects.get(pk=4)
+
+    return HttpResponse(f"Articulo: {articulo.title}")
+
+def editar_articulo(request, id):
+
+    articulo = Article.objects.get(pk=id)
+    articulo.content =  "Este es el contenido modificado"
+
+    articulo.save()
+
+    return HttpResponse(f"Articulo editado : {articulo.title} - {articulo.content}")
+
+def articulos(request):
+
+    articulos = Article.objects.all()
+
+    return render(request, 'articulos.html',{'articulos': articulos})
+
+def borrar_articulo(request, id):
+
+    articulo = Article.objects.get(pk=id)
+    articulo.delete()
+    return redirect('articulos')
