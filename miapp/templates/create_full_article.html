@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Master en Python y Djando - Formulario de Articulo
+{% endblock %}
+
+{% block content  %}
+    <h1 class="title">Formulario de Articulo por Clase</h1>
+
+    {% if form.errors %}
+        <strong class='rojo'>
+            Hay errores en el formulario
+        </strong>
+    {% endif %}
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Guardar" />
+    </form>
+{% endblock %}
