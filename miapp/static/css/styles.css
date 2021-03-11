@@ -7,6 +7,11 @@
     text-decoration: none;
 }
 
+.clearfix{
+    clear: both;
+    float: none;
+}
+
 body{
     background-color: #f2f2f2;
 }
@@ -180,6 +185,55 @@ nav ul li a:hover{
     margin-top: 5px;
 }
 
+.article-item{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    clear: both;
+}
+
+.article-item .image{
+    float: left;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.article-item .image image img{
+    height: 200px;
+}
+
+.article-item .data{
+    float: left;
+    padding: 15px;
+    padding-top: 0px;
+}
+
+.article-item h2{
+    display: block;
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.article-item span.date{
+    display: block;
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.btn{
+    padding: 10px;
+    background: rgb(207, 48, 48);
+    color: white;
+    border: 1px solid black;
+    display: block;
+    margin-top: 15px;
+    width: 100px;
+    text-align: center;
+}
 
 /* Estilo de footer */
 
